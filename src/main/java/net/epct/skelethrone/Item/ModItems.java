@@ -13,7 +13,7 @@ import java.util.function.Function;
 
 public class ModItems
 {
-    public static final Item PINK_GARMENT = registerItem("pink_garnet", Item::new, new Item.Settings());
+    public static final Item pink_garnet = registerItem("pink_garnet", Item::new, new Item.Settings());
 
     public static Item registerItem(String name, Function<Item.Settings, Item> factory, Item.Settings settings)
     {
@@ -23,7 +23,7 @@ public class ModItems
 
     public static void customIngredients(FabricItemGroupEntries entries)
     {
-        entries.add(PINK_GARMENT);
+        entries.add(pink_garnet);
     }
 
     public static void registerModItems()
