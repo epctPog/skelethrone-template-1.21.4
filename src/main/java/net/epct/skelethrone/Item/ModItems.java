@@ -13,21 +13,19 @@ import java.util.function.Function;
 
 public class ModItems
 {
-    public static final Item pink_garnet = registerItem("pink_garnet", Item::new, new Item.Settings());
-
+    public static final Item PINK_GARNET = registerItem("pink_garnet", Item::new, new Item.Settings());
     public static Item registerItem(String name, Function<Item.Settings, Item> factory, Item.Settings settings)
     {
         final RegistryKey<Item> registerKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Skelethrone.MOD_ID, name));
         return Items.register(registerKey, factory, settings);
     }
-
     public static void customIngredients(FabricItemGroupEntries entries)
     {
-        entries.add(pink_garnet);
+        entries.add(PINK_GARNET);
     }
-
     public static void registerModItems()
     {
+        Skelethrone.LOGGER.info("Register Items for " + Skelethrone.MOD_ID);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::customIngredients);
     }
 }

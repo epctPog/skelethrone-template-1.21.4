@@ -1,5 +1,6 @@
 package net.epct.skelethrone;
 
+import net.epct.skelethrone.Block.ModBlocks;
 import net.epct.skelethrone.Item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -13,5 +14,6 @@ public class Skelethrone implements ModInitializer {
 	public void onInitialize()
 	{
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }
